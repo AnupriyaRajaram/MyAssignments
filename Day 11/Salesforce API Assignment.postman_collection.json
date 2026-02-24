@@ -1,0 +1,431 @@
+{
+  "info": {
+    "_postman_id": "cd15c873-f911-47df-b1ad-9d9efac2fc41",
+    "name": "Salesforce API Assignment",
+    "description": "SalesForce API's to perform CRUD Operations on Leads and Accounts",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "22211928"
+  },
+  "item": [
+    {
+      "name": "Generate OAuth Token",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "00Dg5000004pHXZ!AQEAQCA6biHuRp4BUHqKmyNz3K62uYCaVm5OtoH7bo6_e3wI.UVGJdhh0Gw9gMN.szBpjRDIIKCY_RE61Qo1XWzKQ.d38mq5",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "use",
+            "value": "",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "grant_type",
+              "value": "password",
+              "type": "text"
+            },
+            {
+              "key": "client_id",
+              "value": "3MVG97L7PWbPq6UzOh.C1VGV0cQoo1TGbeS98n.lXMugbjnVMOTYWZf3aTLrvDFGV_CN0x4JIwtLWAaLG0ess",
+              "type": "text"
+            },
+            {
+              "key": "client_secret",
+              "value": "A71E53B4C8D36B61609FB65647CC1D6A5545DB6BEF7C33327CC09E5A57EC5A30",
+              "type": "text"
+            },
+            {
+              "key": "username",
+              "value": "priya.wunderkind.bee7929d80bd@agentforce.com",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "Anu@9941313737GIQkg90q8mA5Zk3OrH4Nd6n6",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://login.salesforce.com/services/oauth2/token",
+          "protocol": "https",
+          "host": [
+            "login",
+            "salesforce",
+            "com"
+          ],
+          "path": [
+            "services",
+            "oauth2",
+            "token"
+          ]
+        },
+        "description": "Generate OAuth Token for accessing Sales Force API's"
+      },
+      "response": [
+        {
+          "name": "Sample Response-OAuth Token",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "grant_type",
+                  "value": "password",
+                  "type": "text"
+                },
+                {
+                  "key": "client_id",
+                  "value": "3MVG9pRzvMkjMb6lZlt3YjDQwe0hk0f5ZPyWD38tfPYQ75KXUzZBGzM_c7I0o3yc6ua1IUk6lEQIy4U2sByrg",
+                  "type": "text"
+                },
+                {
+                  "key": "client_secret",
+                  "value": "79FFF874D54193B377A60354C71CBBE83120AD28A5D6BC536D2F68C94645DE98",
+                  "type": "text"
+                },
+                {
+                  "key": "username",
+                  "value": "ranjini.r@testleaf.com",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "Testleaf$321",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://login.salesforce.com/services/oauth2/token",
+              "protocol": "https",
+              "host": [
+                "login",
+                "salesforce",
+                "com"
+              ],
+              "path": [
+                "services",
+                "oauth2",
+                "token"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Date",
+              "value": "Fri, 18 Aug 2023 07:32:16 GMT"
+            },
+            {
+              "key": "Strict-Transport-Security",
+              "value": "max-age=63072000; includeSubDomains"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "1; mode=block"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache,must-revalidate,max-age=0,no-store,private"
+            },
+            {
+              "key": "Expires",
+              "value": "Thu, 01 Jan 1970 00:00:00 GMT"
+            },
+            {
+              "key": "X-ReadOnlyMode",
+              "value": "false"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json;charset=UTF-8"
+            },
+            {
+              "key": "Vary",
+              "value": "Accept-Encoding"
+            },
+            {
+              "key": "Content-Encoding",
+              "value": "gzip"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"access_token\": \"00D5j00000C8pLO!ARoAQJkv2RwPAm9HLOugwZ1bTLRXD4KulKXQ8r8HBCGZt0sRLIMGcWMk6dVAUdKhrcKmQujGZ5wAO18T8q.6HQZb_ScZ3y9F\",\n    \"instance_url\": \"https://testleaf30-dev-ed.develop.my.salesforce.com\",\n    \"id\": \"https://login.salesforce.com/id/00D5j00000C8pLOEAZ/0055j0000080rEbAAI\",\n    \"token_type\": \"Bearer\",\n    \"issued_at\": \"1692343936897\",\n    \"signature\": \"9EhTlZnZUI4qZ8ru7IPx6hMBTapEE5J4K7zyRZ9Gdj0=\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "CreateOpport",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "00Dg5000004pHXZ!AQEAQI53OfWiLUMTrvxpZLMYcp3xhXCaXIaxxGcOt6jHRWPIOPLlRGCqYwRJX2wXHcnH5NkusPOAUp376IpkjpetEtZiOUuB",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\"CloseDate\": \"2025-03-15\",\r\n\"StageName\": \"Prospecting and Name\",\r\n\"Name\": \"Anupriya\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://orgfarm-c14272b74b-dev-ed.develop.my.salesforce.com/services/data/v59.0/sobjects/Opportunity",
+          "protocol": "https",
+          "host": [
+            "orgfarm-c14272b74b-dev-ed",
+            "develop",
+            "my",
+            "salesforce",
+            "com"
+          ],
+          "path": [
+            "services",
+            "data",
+            "v59.0",
+            "sobjects",
+            "Opportunity"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GETOpport",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "00Dg5000004pHXZ!AQEAQCA6biHuRp4BUHqKmyNz3K62uYCaVm5OtoH7bo6_e3wI.UVGJdhh0Gw9gMN.szBpjRDIIKCY_RE61Qo1XWzKQ.d38mq5",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://orgfarm-c14272b74b-dev-ed.develop.my.salesforce.com/services/data/v65.0/sobjects/Lead/00Qg5000001ozxNEAQ",
+          "protocol": "https",
+          "host": [
+            "orgfarm-c14272b74b-dev-ed",
+            "develop",
+            "my",
+            "salesforce",
+            "com"
+          ],
+          "path": [
+            "services",
+            "data",
+            "v65.0",
+            "sobjects",
+            "Lead",
+            "00Qg5000001ozxNEAQ"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "PATCHOpport",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "00Dg5000004pHXZ!AQEAQI53OfWiLUMTrvxpZLMYcp3xhXCaXIaxxGcOt6jHRWPIOPLlRGCqYwRJX2wXHcnH5NkusPOAUp376IpkjpetEtZiOUuB",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"Type\": \"New Customer\",\r\n    \"StageName\": \"Prospecting\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://orgfarm-c14272b74b-dev-ed.develop.my.salesforce.com/services/data/v59.0/sobjects/Opportunity/006g5000001wQUbAAM",
+          "protocol": "https",
+          "host": [
+            "orgfarm-c14272b74b-dev-ed",
+            "develop",
+            "my",
+            "salesforce",
+            "com"
+          ],
+          "path": [
+            "services",
+            "data",
+            "v59.0",
+            "sobjects",
+            "Opportunity",
+            "006g5000001wQUbAAM"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DeleteOpport",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "00Dg5000004pHXZ!AQEAQCA6biHuRp4BUHqKmyNz3K62uYCaVm5OtoH7bo6_e3wI.UVGJdhh0Gw9gMN.szBpjRDIIKCY_RE61Qo1XWzKQ.d38mq5",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "https://orgfarm-c14272b74b-dev-ed.develop.my.salesforce.com/services/data/v65.0/sobjects/Lead/00Qg5000001ozxNEAQ",
+          "protocol": "https",
+          "host": [
+            "orgfarm-c14272b74b-dev-ed",
+            "develop",
+            "my",
+            "salesforce",
+            "com"
+          ],
+          "path": [
+            "services",
+            "data",
+            "v65.0",
+            "sobjects",
+            "Lead",
+            "00Qg5000001ozxNEAQ"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "lead_ID",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "account_id",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "ResourceTk",
+      "value": ""
+    }
+  ]
+}
